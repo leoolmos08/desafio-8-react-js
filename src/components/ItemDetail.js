@@ -10,9 +10,10 @@ import { CartContext } from "./CartContext";
 const ItemDetail = ({item}) =>{
     const [itemCount, setItemCount] =  useState(0);
    const useCtx = useContext(CartContext);
-    const onAdd = (rta) => {
-        alert("Has seleccionado  " + rta + "  hamburguesas.");
-        setItemCount(rta);
+    const onAdd = (qty) => {
+        alert("Has seleccionado  " + qty + "  hamburguesas.");
+        setItemCount(qty);
+        useCtx.addToCart(item, qty); 
     }
     return(
         <>
